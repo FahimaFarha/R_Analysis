@@ -1,0 +1,50 @@
+# MPG Regression Analysis
+
+In order to conduct any statistical analysis, we need to first establish a null hypothesis and an alternative 
+hypothesis. We will look at the slope (m) of each variable of the dataset in a mulitple linear regression model to determine which one(s) provides a non-random amount of variance to the miles per gallon (mpg) value of the MechaCar. For this analysis, we will set our significance level, or p-value, as 0.05.
+
+null hypothesis: m = 0
+alternative hypothesis: m != 0
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776   
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+
+
+The Upper Management team asked us to identify which variable would be of interest to us concerning the mpg testing of the MechaCar prototypes. After generating the summary of the  mulitlpe linear regression model, we can see that the vehicle length and ground clearance each had a p-value that was statistically significant. In other words, this means that the formentioned variables have an influence over the variance on the mpg values of the MechaCar dataset. 
+Since the intercept for multiple regression model is less than 0.05, we can reject the null hypothesis and the slope of the linear model is not equal to zero. This means that there are other factors that are contributing to the variance we see in the mpg values of the MechaCar dataset. Because we generated a multiple linear regression model using all the variables in the MechaCar dataset, we will need to think outside of the box to determine what those other factors could be.
+Is this model the best at predicting the mpg of the MechaCar prototypes? The summary of the multiple linear regression model produces a multiple R-squared value of 0.71. This means that there is a slight positive linear correlation to the mpg values of the MechaCar dataset and the individual variables. From this we can presume that this model is statistically significant for the analysis that we are performing. However, as stated before, the low intercept value of the model suggests that there are other facotrs that need to be considered for this analysis.
+
+# Suspension Coil Summary
+
+Manufacturing_Lot     Mean        Median        Variance        SD
+Lot1                  1500.00     1500.0        0.9795918       0.9897433
+Lot2                  1500.20     1500.0        7.4693878       2.7330181
+Lot3                  1496.14     1498.5        170.2861224   	13.0493725
+
+After collecting the summary statistics of the suspension coil in each Manufacturing Lot, we see that both Lot 1 and Lot 2 have low variance and standard deviation (SD) values. The MechaCar design specifications state that the variance of the coils can not exceed 100 pounds per inch (PSI). The coils in Lot 1 have the least amount of variance which means that for the most part, the PSI per vehicle is relatively the same. From a manufacturing stand point this means that the current data from Lot 1 and even Lot 2 meets the design 
+criteria. However, the coils in Lot 3 have a large variance, which means that the coils in this lot do not meet the design specification of having a variance of less than 100 PSI.
+
+# Suspension Coil T-Test
+
+Before performing the t-test, we need to establish our null and alternative hypotheses. In addition, we will set 0.05 as the significance level for the p-value. Here we want to determine if the sample mean is statistically different from the population mean.
+
+null hypothesis: There is a statistical difference in the PSI
+alternative hypothesis: There is not a statistical diffence in the PSI
+
+The results of the t-test show a p-value of 0.06, or 6%. Based on the p-value we would reject the null hypothesis and infer that the mean PSI of the suspension coil is not statistically different from the population mean.
+
+# Independent Study
+
+The Upper Management team has asked us to design a study that compares the MechaCar prototype to other vehicles in the market. For this we need to think like a consumer. What key metrics to consumers look into when buying a car? The first is usually fuel economy. How many miles does each car give per gallon? A few others include the cost of the car, how fast it can go from zero miles to 60 miles, the safety ratings, and what comes standard with the car and what other features you can include in the car. 
+
+Using the key metrics above, we can determine what questions to ask and what our null and alternative hypotheses would be. When looking at fuel economy (miles per gallon/mpg), our null hypothesis would be that there is no statistical difference between the fuel economy of the MechaCars and its competitors in the 
+market. The alternative hypothesis is that there is a statistical difference between the fuel economy of the MechaCars and its competitors. We would perform a two-sample t-test with the fuel economy of the MechaCar and its competitors. Ideally, we would want to show that there is a statistical difference in the fuel economy of the MecharCar and its competition, with the MechaCar delivering more miles per gallon.
+
+If we look at the cost of cars metric, the question we would ask is "Does the price of the car play a role in whether or not a vehicle interests consumers?" Our null hypothesis would be that there is no statistical difference in the price of cars when it comes time to purchase. Our alternative hypothesis would be that there is a statistical difference in the price of cars when it comes time to purchase. To test this, we would need to see how many cars are purchased at different price ranges. Then we could perform a two-sample t-test to detemine if there is any statistical difference. 
+
